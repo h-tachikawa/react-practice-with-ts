@@ -16,7 +16,7 @@ const App: FC = () => {
 
   return (
     <div className={classes.root}>
-      <Header title={title} />
+      <Header />
       <Switch>
         <Route path="/" exact component={TaskList} />
         <Route path="/task" component={TaskList} />
