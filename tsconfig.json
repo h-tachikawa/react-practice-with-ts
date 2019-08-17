@@ -18,7 +18,8 @@
     "tsBuildInfoFile": "./buildcache/tsbuildinfo",
     "jsx": "preserve",
     "outDir": "build",
-    "rootDirs": ["src"]
+    "rootDirs": ["src"],
+    "noImplicitAny": false
   },
   "include": ["src"],
   "exclude": [

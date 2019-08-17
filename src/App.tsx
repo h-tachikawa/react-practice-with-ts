@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { makeStyles } from '@material-ui/core';
+import { Redirect, Route, Switch } from 'react-router';
+import TaskList from './containers/TaskList';
+import Header from './components/Header';
 
-const App: React.FC = () => {
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
+
+const App: FC = () => {
+  const title = 'My Application';
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Header title={title} />
+      <Switch>
+        <Route path="/" exact component={TaskList} />
+        <Route path="/task" component={TaskList} />
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 };
