@@ -4,10 +4,19 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { createMuiTheme } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
+import { blue } from '@material-ui/core/colors';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#2196F3',
+    },
+    secondary: {
+      main: '#EF5350',
+    },
+  },
 });
 
 ReactDOM.render(
